@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->only('index');
     }
 
     /**
@@ -25,5 +25,15 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function addAJAXOption(Poll $poll, Request $request)
+    {
+        try {
+            $poll->attach($request->get('option'));
+            return $poll->options->last()->only('name', 'id');
+        } catch (\Exception $e) {
+            return response($e->getMessage(), '500');
+        }
     }
 }

@@ -18,4 +18,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('poll/{poll}', '');
+Route::get('polls/{poll}/addOption', 'HomeController@addAJAXOption')->name('poll.addOption');

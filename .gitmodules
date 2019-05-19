@@ -1,0 +1,3 @@
+[submodule "packages/inani/larapoll"]
+	path = packages/inani/larapoll
+	url = git@github.com:AboElnoor/larapoll.git

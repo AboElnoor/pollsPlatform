@@ -1,4 +1,5 @@
 @extends('larapoll::layouts.app')
+@section('title') {{ $poll->question }} @endsection
 
 @section('content')
 <div class="container">
